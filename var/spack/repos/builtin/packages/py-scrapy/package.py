@@ -24,22 +24,19 @@ from spack.package import *
 
 
 class PyScrapy(PythonPackage):
-    """FIXME: Put a proper description of your package here."""
+    """Scrapy is a fast high-level web crawling and web scraping framework, 
+    used to crawl websites and extract structured data from their pages. 
+    It can be used for a wide range of purposes, from data mining to monitoring and automated testing."""
 
-    # FIXME: Add a proper url for your package's homepage here.
-    homepage = "https://www.example.com"
-
-    # FIXME: ensure the package is not available through PyPI. If it is,
-    # re-run `spack create --force` with the PyPI URL.
+    homepage = "https://scrapy.org/"
     url = "https://github.com/scrapy/scrapy/archive/refs/tags/2.6.2.tar.gz"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
+
+    maintainers = ["frerappa"]
 
     version("2.6.2", sha256="64334f0bd0c4ea695205656ed004b562af146fa541f157dc4efa4a9096987e9e")
-    version("2.6.1", sha256="f900626eb21e7aee9b636b3549f4c4a8ed17358e1d93b04a0cd4ae2869777ad1")
-    version("2.6.0", sha256="a4287a84cdc2d72faff41736ea9b5f8bfb78265215fe190e13cf4397f4772fc5")
+
+    depends_on("py-lxml", type=("build", "run"))
 
     # FIXME: Only add the python/pip/wheel dependencies if you need specific versions
     # or need to change the dependency type. Generic python/pip/wheel dependencies are
@@ -57,14 +54,14 @@ class PyScrapy(PythonPackage):
     # FIXME: Add additional dependencies if required.
     # depends_on("py-foo", type=("build", "run"))
 
-    def global_options(self, spec, prefix):
-        # FIXME: Add options to pass to setup.py
-        # FIXME: If not needed, delete this function
-        options = []
-        return options
+    # def global_options(self, spec, prefix):
+    #     # FIXME: Add options to pass to setup.py
+    #     # FIXME: If not needed, delete this function
+    #     options = []
+    #     return options
 
-    def install_options(self, spec, prefix):
-        # FIXME: Add options to pass to setup.py install
-        # FIXME: If not needed, delete this function
-        options = []
-        return options
+    # def install_options(self, spec, prefix):
+    #     # FIXME: Add options to pass to setup.py install
+    #     # FIXME: If not needed, delete this function
+    #     options = []
+    #     return options
